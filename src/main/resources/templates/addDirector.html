@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/savedirector" th:object="${aDirector}" method="post">
+
+    <input type="hidden" th:field="*{id}">
+    <div>
+    <label for="fullName">Enter director's  name</label>
+    <input type="text" th:field="*{fullName}">
+    </div>
+
+    <div>
+    <label for="fullName">Enter  director's genre</label>
+    <input type="text" th:field="*{genre}">
+    </div>
+
+    <button type="submit">Save</button>
+
+</form>
+</body>
+</html>

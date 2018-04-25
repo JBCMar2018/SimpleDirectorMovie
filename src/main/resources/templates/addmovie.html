@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/savemovie" th:object="${aMovie}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label for="title">Enter movie's  title</label>
+            <input type="text" th:field="*{title}">
+        </div>
+
+        <div>
+        <label for="year">Enter year released</label>
+        <input type="text" th:field="*{year}">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <input type="text" th:field="*{description}">
+        </div>
+
+        <div>
+            <label for="theDirector">Select director</label>
+            <!--Change this to a select so that you can select a director by name and use the ID value-->
+            <!--<input type="text" th:field="*{theDirector}">-->
+
+            <!--Use this to list all the directors in teh database. See the controller for the object that passes all the directors to the view -->
+            <select th:field="*{theDirector}">
+                <option th:each="eachDirector:${directorlist}" th:value="${eachDirector.id}" th:text="${eachDirector.fullName}"></option>
+            </select>
+
+        </div>
+
+
+        <button type="submit">Save</button>
+
+    </form>
+
+</body>
+</html>
