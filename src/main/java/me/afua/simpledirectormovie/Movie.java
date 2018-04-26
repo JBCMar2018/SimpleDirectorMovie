@@ -22,7 +22,7 @@ public class Movie {
     //Add a relationship with the director:
 
     @ManyToOne()
-    //This establishes a relationship in which many moves can SHARE one director
+    //This establishes a relationship in which many movies can SHARE one director
     private Director theDirector;
 
 
